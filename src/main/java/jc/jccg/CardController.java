@@ -1,19 +1,31 @@
 package jc.jccg;
 
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
-import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@EnableAutoConfiguration
-public class App 
+@RequestMapping(CardController.BASE_URL)
+public class CardController 
 {
-	@RequestMapping("/")
-	String home() {
-		return "Hello World!";
+	public static final String BASE_URL = "/jccg";
+	
+	private final CardService cardService;
+	
+	public CardController(CardService cardService) {
+		this.cardService = cardService;
 	}
 	
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(App.class, args);
+	@RequestMapping("/cards")
+	List<Card> home() {
+		return cardService.getCards();
+	}
+	
+	@RequestMapping("/cards/{id}")
+	public Optional<Card> getCard(@PathVariable Long id){
+		return cardService.getCardById(id);
 	}
 }
