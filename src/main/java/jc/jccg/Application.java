@@ -16,14 +16,12 @@ public class Application {
     }
 	
 	@Bean ApplicationRunner init(CardService cardService) {
+		
 		return args -> {
-			Stream.of("Card1", "Card2", "Card3").forEach(name -> {
-				Card card = new Card();
-				card.setName(name);
-				cardService.saveCard(card);
-			});
+			Card.fromFile().forEach(card -> cardService.saveCard(card));
 			cardService.getCards().forEach(System.out::println);
-			};
+		};
+		
 	}
 
 }
