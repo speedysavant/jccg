@@ -1,4 +1,5 @@
 card0001!name:JSS Valiant
+card0001!faction:Jovian
 card0001!keywords:Valiant Class Ship, Carrier 6
 card0001!description:The Fightin'est Ship in the Fleet
 card0001!img:location_of_card_image.jpg
@@ -6,8 +7,13 @@ card0001!cardtype:Ship
 card0001!resourcecost:20
 card0001!volatilescost:12
 card0001!health:10
+card0001!combatshort:4
+card0001!combatmid:6
+card0001!combatlong:8
+card0001!defense:6
 
 card0002!name:JSS Vigilant
+card0002!faction:Jovian
 card0002!keywords:Valiant Class Ship, Carrier 6
 card0002!description:The Fightin'est Ship in the Fleet
 card0002!img:location_of_card_image.jpg
@@ -15,8 +21,13 @@ card0002!cardtype:Ship
 card0002!resourcecost:20
 card0002!volatilescost:12
 card0002!health:10
+card0002!combatshort:4
+card0002!combatmid:6
+card0002!combatlong:8
+card0002!defense:6
 
 card0003!name:JSS Francine Sauvignon
+card0003!faction:Jovian
 card0003!keywords:Forge Class Ship, Carrier 8
 card0003!description:The Fightin'est Ship in the Fleet
 card0003!img:location_of_card_image.jpg
@@ -24,3 +35,7 @@ card0003!cardtype:Ship
 card0003!resourcecost:16
 card0003!volatilescost:14
 card0003!health:8
+card0003!combatshort:4
+card0003!combatmid:4
+card0003!combatlong:2
+card0003!defense:5

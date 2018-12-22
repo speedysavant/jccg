@@ -1,4 +1,4 @@
-package jc.jccg;
+package jc.jccg.card;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -56,15 +56,25 @@ public class CardBuilder {
 		return card;
 	}
 	private static void setCardField(Card card, Entry entry) {
-		switch (entry.field) {
-		case "name": card.setName(entry.value); break;
-		case "keywords": card.setKeywords(entry.value); break;
-		case "description": card.setDescription(entry.value); break;
-		case "img": card.setImg(entry.value); break;
-		case "cardtype": card.setCardType(entry.value); break;
-		case "resourcecost": card.setResourceCost(Integer.valueOf(entry.value)); break;
-		case "volatilescost": card.setVolatilesCost(Integer.valueOf(entry.value)); break;
-		case "health": card.setHealth(Integer.valueOf(entry.value)); break;
+		switch (entry.field.toLowerCase()) {
+			case "name": card.setName(entry.value); break;
+			case "faction": card.setFaction(entry.value); break;
+			case "keywords": card.setKeywords(entry.value); break;
+			case "description": card.setDescription(entry.value); break;
+			case "img": card.setImg(entry.value); break;
+			case "cardtype": card.setCardType(entry.value); break;
+			case "resourcecost": card.setResourceCost(Integer.valueOf(entry.value)); break;
+			case "volatilescost": card.setVolatilesCost(Integer.valueOf(entry.value)); break;
+			case "health": card.setHealth(Integer.valueOf(entry.value)); break;
+			
+			case "combatshort": card.setCombatShort(Integer.valueOf(entry.value)); break;
+			case "combatmid": card.setCombatMid(Integer.valueOf(entry.value)); break;
+			case "combatlong": card.setCombatLong(Integer.valueOf(entry.value)); break;
+			case "defense": card.setDefense(Integer.valueOf(entry.value)); break;
+			
+			case "resourceproduction": card.setResourceProduction(Integer.valueOf(entry.value)); break;
+			case "volatileproduction": card.setVolatileProduction(Integer.valueOf(entry.value)); break;
+			case "constructionbays": card.setConstructionBays(Integer.valueOf(entry.value)); break;
 		}
 	}
 

@@ -1,8 +1,8 @@
-package jc.jccg;
+package jc.jccg.card;
 
 import java.util.List;
-import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +13,11 @@ public class CardController
 {
 	public static final String BASE_URL = "/jccg";
 	
-	private final CardService cardService;
+	@Autowired private CardService cardService;
+	
+	public CardController() {
+		
+	}
 	
 	public CardController(CardService cardService) {
 		this.cardService = cardService;
@@ -25,7 +29,7 @@ public class CardController
 	}
 	
 	@RequestMapping("/cards/{id}")
-	public Optional<Card> getCard(@PathVariable Long id){
+	public Card getCard(@PathVariable String id){
 		return cardService.getCardById(id);
 	}
 }
