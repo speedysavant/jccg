@@ -2,14 +2,25 @@ package jc.jccg.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
-// @Entity
+@Entity
 public class Game {
-	// @Id 
+	@Id 
 	private String id;
 	private Long startTime;
+	
+	@ManyToMany(cascade = { CascadeType.ALL })
+	@JoinTable(
+			name = "Game_Players",
+			joinColumns = { @JoinColumn (name = "id") },
+			inverseJoinColumns = { @JoinColumn (name = "username") }
+	)
 	private List<Player> players;
 	
 	public static int MAX_PLAYERS = 4;

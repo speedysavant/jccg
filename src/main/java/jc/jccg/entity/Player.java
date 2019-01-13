@@ -5,12 +5,14 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Player {
 	@Id 
 	private String username;
 	private String password;
+	@ManyToMany(mappedBy = "Game")
 	private Game currentGame; // TODO: have to set this up as a relation with another table in hibernate
 
 	public String getUsername() {
