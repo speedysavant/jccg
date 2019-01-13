@@ -1,4 +1,4 @@
-package jc.jccg.player;
+package jc.jccg.weblogin;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

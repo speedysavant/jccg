@@ -1,4 +1,4 @@
-package jc.jccg.player;
+package jc.jccg.weblogin;
 
 public interface SecurityService {
     String findLoggedInUsername();

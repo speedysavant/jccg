@@ -1,4 +1,4 @@
-package jc.jccg.player;
+package jc.jccg.weblogin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

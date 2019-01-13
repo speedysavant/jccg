@@ -1,4 +1,4 @@
-package jc.jccg.player;
+package jc.jccg.weblogin;
 
 public interface UserService {
     void save(User user);
