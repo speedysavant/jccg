@@ -1,4 +1,4 @@
-package jc.jccg.card;
+package jc.jccg.service.card;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import jc.jccg.entity.Card;
 
 
 public class CardBuilder {

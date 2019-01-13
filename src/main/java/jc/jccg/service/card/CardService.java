@@ -1,4 +1,4 @@
-package jc.jccg.card;
+package jc.jccg.service.card;
 
 import java.util.List;
 
@@ -6,6 +6,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import jc.jccg.entity.Card;
 
 @Service
 @Transactional

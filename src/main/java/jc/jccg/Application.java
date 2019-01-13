@@ -7,8 +7,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
-import jc.jccg.card.Card;
-import jc.jccg.card.CardService;
+import jc.jccg.entity.Card;
+import jc.jccg.service.card.CardService;
 
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {

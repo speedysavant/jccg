@@ -1,10 +1,12 @@
-package jc.jccg.card;
+package jc.jccg.entity;
 
 import java.io.IOException;
 import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
+import jc.jccg.service.card.CardBuilder;
 
 
 @Entity
