@@ -1,22 +1,27 @@
 package jc.jccg;
 
-import java.util.stream.Stream;
-
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication
-public class Application {
+import jc.jccg.card.Card;
+import jc.jccg.card.CardService;
 
+@SpringBootApplication
+public class Application extends SpringBootServletInitializer {
+
+	@Override protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(Application.class);
+	}
 	
 	public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 	
 	@Bean ApplicationRunner init(CardService cardService) {
-		
 		return args -> {
 			Card.fromFile().forEach(card -> cardService.saveCard(card));
 			cardService.getCards().forEach(System.out::println);
